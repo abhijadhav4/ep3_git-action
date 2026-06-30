@@ -1,4 +1,4 @@
-# ⚔️ Chhota Bheem vs Kirmada - Dholakpur Protection Missions
+# ⚔️ Chhota Bheem vs Kirmada - Dholakpur Protection Mission
 
 name: Protect Dholakpur using DevOps AI Tool
 
@@ -32,7 +32,7 @@ jobs:
         uses: actions/setup-node@v4
 
         with:
-          node-version: "18"
+          node-version: "24"
 
       # 🍲 Chutki gathers food and weapons for all soldiers
       - name: Gather Battle Supplies
