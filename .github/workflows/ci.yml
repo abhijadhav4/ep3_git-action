@@ -1,0 +1,72 @@
+# ⚔️ Chhota Bheem vs Kirmada - Dholakpur Protection Mission
+
+name: Protect Dholakpur using DevOps AI Tool
+
+on:
+
+  # 👹 Whenever Kirmada attacks Dholakpur
+  push:
+    branches:
+      - ci-branch
+
+  # 🤝 Whenever new warriors want to join Bheem's army
+  pull_request:
+    branches:
+      - ci-branch
+
+jobs:
+
+  tests:
+
+    # 🏕️ Build a Temporary Battle Camp
+    runs-on: ubuntu-latest
+
+    steps:
+
+      # 🐒 Jaggu brings the latest Kingdom Battle Map
+      - name: Collect Kingdom Battle Map
+        uses: actions/checkout@v4
+
+      # ⚔️ Kalia prepares the magical Node.js weapons
+      - name: Prepare Battle Weapons
+        uses: actions/setup-node@v4
+
+        with:
+          node-version: "18"
+
+      # 🍲 Chutki gathers food and weapons for all soldiers
+      - name: Gather Battle Supplies
+        run: npm install
+
+      # 💪 Bheem trains every soldier before fighting Kirmada
+      - name: Train the Royal Army
+        run: npm test
+
+      # 🏗️ Dholu & Bholu build the Battle Fortress
+      - name: Build the Battle Fortress
+        run: npm run build
+
+      # 📦 Jaggu stores the completed fortress inside the Royal Treasure Room
+      - name: Store Battle Fortress
+
+        uses: actions/upload-artifact@v4
+
+        with:
+
+          name: app-artifact
+
+          path: dist/
+
+#  final-battle:
+#
+#    battle-camp: ubuntu-latest
+#
+#    battle-after: prepare-warriors
+#
+#    battle-steps:
+#
+#      - mission-name: Collect Kingdom Battle Map
+#        royal-helper: actions/checkout@v4
+#
+#      - mission-name: Build Kirmada Battle Chariot
+#        bheem-command: docker build -t devops-ai-tool:${battle-id} .
